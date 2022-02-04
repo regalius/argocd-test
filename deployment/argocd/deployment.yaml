@@ -9,15 +9,15 @@ spec:
   source:
     repoURL: https://github.com/regalius/argocd-test.git
     targetRevision: HEAD
-    path: dev
+    path: application
   destination: 
     server: https://kubernetes.default.svc
-    namespace: myapp
+    namespace: application
 
   syncPolicy:
     syncOptions:
-    - CreateNamespace=true
     - Validate=false
+
     automated:
       selfHeal: true
       prune: true
