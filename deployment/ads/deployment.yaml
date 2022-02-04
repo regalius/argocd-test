@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: myapp-argo-application
+  name: ads-argo
   namespace: argocd
 spec:
   project: default
@@ -9,10 +9,10 @@ spec:
   source:
     repoURL: https://github.com/regalius/argocd-test.git
     targetRevision: HEAD
-    path: application
+    path: production/application/ads
   destination: 
     server: https://kubernetes.default.svc
-    namespace: application
+    namespace: default
 
   syncPolicy:
     syncOptions:
